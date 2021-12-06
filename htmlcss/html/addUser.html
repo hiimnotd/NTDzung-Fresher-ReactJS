@@ -4,12 +4,14 @@
   <meta charset="UTF-8">
   <meta http-equiv="X-UA-Compatible" content="IE=edge">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <link href='https://fonts.googleapis.com/css?family=Open Sans' rel='stylesheet'>  
   <link rel="stylesheet" href="../css/style.css">
+  <link rel="stylesheet" href="../css/addUser.css">
 </head>
 <body>
   <div class="wrapper">
-    <div class="side-bar color-primary">
-      <div class="flex-row align-center padding-vertical-24 padding-horizontal-24">
+    <div class="side-bar background-primary">
+      <div class="flex-row align-center padding-vertical-20 padding-horizontal-24">
         <p class="color-white font-size-24">KPMG CSR Survey</p>
         <img class="margin-left-48" src="../icons/menu.png"></img>
       </div>  
@@ -46,6 +48,129 @@
       </div>
     </div>
     <div class="main-content">
+      <div class="header">
+        <div class="flex-row-reverse padding-vertical-5 margin-right-16">
+          <img src="../icons/arrow_down.png"></img>
+          <p class="font-size-14">firstname.lastname@jp.kpmg.com</p>
+        </div>
+      </div>
+      <hr />
+      <div class="container">
+        <div class="flex-row breadcrumbs">
+          <img src="../icons/people_primary.png"></img>
+          <div style="width: 4px"></div>
+          <p class="color-primary margin-right-14 font-size-12 font-weight-400">User management</p>
+          <p class="color-medium-grey font-size-12 font-weight-400">/</p>
+          <p class="color-medium-grey margin-left-14 font-size-12 font-weight-400">Add user</p>
+        </div>
+        <div class="content">
+          <div class="flex-row justify-space-between align-center ">
+            <p class="font-size-48 font-weight-300">Add user</p>
+            <div class="flex-row">
+              <button class="button button-outline">
+                <p class="color-primary font-size-14 font-weight-600">Cancel</p>
+              </button>
+              <div style="width: 16px"></div>
+              <button class="button button-contain">
+                <p class="color-white font-size-14 font-weight-600">Save</p>
+              </button>
+            </div>
+          </div>
+          <div style="height: 48px"></div>
+          <div>
+            <p class="font-size-24 font-weight-600">General Information</p>
+            <div style="height: 16px"></div>
+            <div class="field">
+              <label for="email" class="font-size-12 font-weight-400">Email*</label>
+              <input class="input" type="text" name="email">
+            </div>
+            <div style="height: 38px"></div>
+            <div>
+              <label for="role" class="font-size-12 font-weight-400">User role *</label>
+              <div class="dropdown width-300 flex-row align-center justify-space-between">
+                <p class="font-size-16 font-weight-400">Client Admin User</p>
+                <img class="icon" src="../icons/arrow_down.png"></img>
+              </div>
+            </div>
+          </div>
+          <div style="height: 40px"></div>
+          <div>
+            <p class="font-size-24 font-weight-600">Name</p>
+            <div style="height: 16px"></div>
+            <div>
+              <div class="flex-row">
+                <div class="flex-column width-360 height-40">
+                  <label for="lastNameJP" class="font-size-12 font-weight-400">Last name (Japanese)</label>
+                  <input type="text" name="lastNameJP" class="input height-40">
+                </div>
+                <div style="width: 16px"></div>
+                <div class="flex-column width-360 height-40">
+                  <label for="firstNameJP" class="font-size-12 font-weight-400">First name (Japanese)</label>
+                  <input class="input" type="text" name="firstNameJP">
+                </div>
+              </div>
+            </div>
+            <div style="height: 38px"></div>
+            <div>
+              <div class="flex-row">
+                <div class="flex-column width-360 height-40">
+                  <label for="lastNameEN" class="font-size-12 font-weight-400">Last name (English)</label>
+                  <input type="text" name="lastNameEN" class="input">
+                </div>
+                <div style="width: 16px"></div>
+                <div class="flex-column width-360 height-40">
+                  <label for="firstNameEN" class="font-size-12 font-weight-400">First name (English)</label>
+                  <input type="text" name="firstNameEN" class="input">
+                </div>
+              </div>
+            </div>
+          </div>
+          <div style="height: 46px"></div>
+          <div class="field"> 
+            <p class="font-size-24 font-weight-600">Engagement information</p>
+            <div class="form-engagement">
+              <label for="engagementCode" class="font-size-12 font-weight-400">Engagement code*</label>
+              <div class="dropdown flex-row align-center justify-space-between">
+                <p class="font-size-16 font-weight-400 color-semi-medium-grey">Select engagement code - company name</p>
+                <img class="icon" src="../icons/arrow_down.png"></img>
+              </div>
+            </div>
+            <p class="font-size-12 font-weight-400 color-medium-grey">If engagement code cannot be found, please register engagement in Engagement Info first.</p>
+            <div style="height: 25px"></div>
+            <div>
+              <p class="font-size-12 font-weight-400 color-medium-grey">Company name (Japanese)</p>
+              <p class="font-size-16 font-weight-40">-</p>
+            </div>
+            <div style="height: 54px"></div>
+            <div>
+              <p class="font-size-12 font-weight-400 color-medium-grey">Company name (Emglish)</p>
+              <p class="font-size-16 font-weight-40">-</p>
+            </div>
+            <div style="height: 46px"></div>
+            <div class="flex-column">
+              <label for="depJP" class="font-size-12 font-weight-400">Department (Japanese)</label>
+              <input type="text" name="depJP" class="input">
+            </div>
+            <div style="height: 38px"></div>
+            <div class="flex-column">
+              <label for="depEN" class="font-size-12 font-weight-400">Department (English)</label>
+              <input type="text" name="depEN" class="input">
+            </div>
+          </div>
+          <div style="height: 48px"></div>
+          <div class="flex-row justify-end">
+            <div class="flex-row">
+              <button class="button button-outline">
+                <p class="color-primary font-size-14 font-weight-600">Cancel</p>
+              </button>
+              <div style="width: 16px"></div>
+              <button class="button button-contain">
+                <p class="color-white font-size-14 font-weight-600">Save</p>
+              </button>
+            </div>
+          </div>
+        </div>
+      </div>
     </div>
   </div>
 </body>
