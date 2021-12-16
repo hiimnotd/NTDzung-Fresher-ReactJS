@@ -1,11 +1,11 @@
-import React, { CSSProperties } from 'react';
+import React, { CSSProperties } from 'react'
 
 interface SpacerProps {
-  width?: number, 
+  width?: number,
   height?: number
 }
 
-const Spacer = ({width = 0, height = 0}: SpacerProps) => {
+const Spacer = ({ width = 0, height = 0 }: SpacerProps) => {
   const style: CSSProperties = {
     width: width,
     height: height
@@ -14,7 +14,7 @@ const Spacer = ({width = 0, height = 0}: SpacerProps) => {
   return (
     <div style={style} >
     </div>
-  );
+  )
 }
 
-export default Spacer;
+export default Spacer

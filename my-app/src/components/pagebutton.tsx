@@ -1,18 +1,26 @@
-import React, { CSSProperties } from 'react';
+import React, { CSSProperties } from 'react'
+import { FontAwesomeIcon } from '@fortawesome/react-fontawesome'
+import { IconDefinition } from '@fortawesome/fontawesome-svg-core'
 
-const PageButton = ({imgSrc}: {imgSrc: string}) => {
+interface PageButtonProps {
+  imgSrc: IconDefinition;
+  onClick?: () => void;
+  disable?: boolean;
+}
+
+const PageButton = ({ imgSrc, onClick, disable }: PageButtonProps) => {
   const style: CSSProperties = {
     width: '48px',
     height: '40px',
     border: '1px solid #DEDEDE',
-    borderRadius: '4px',
+    borderRadius: '4px'
   }
 
   return (
-    <button style={style}>
-      <img alt="" src={imgSrc} className="icon"></img>
+    <button style={style} onClick={onClick} disabled={disable}>
+      <FontAwesomeIcon icon={imgSrc} />
     </button>
-  );
+  )
 }
 
-export default PageButton;
+export default PageButton
