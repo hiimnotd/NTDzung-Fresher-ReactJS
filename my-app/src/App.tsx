@@ -3,7 +3,6 @@ import { library } from '@fortawesome/fontawesome-svg-core'
 import { faChevronLeft, faChevronRight, faStepBackward, faStepForward } from '@fortawesome/free-solid-svg-icons'
 import axios, { AxiosResponse } from 'axios'
 import React, { useCallback, useEffect, useMemo, useState } from 'react'
-
 import './App.css'
 import arrow_down from './assets/icons/arrow_down.png'
 import business from './assets/icons/business.png'
