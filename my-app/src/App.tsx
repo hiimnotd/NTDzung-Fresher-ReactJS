@@ -2,7 +2,8 @@
 import { library } from '@fortawesome/fontawesome-svg-core'
 import { faChevronLeft, faChevronRight, faStepBackward, faStepForward } from '@fortawesome/free-solid-svg-icons'
 import axios, { AxiosResponse } from 'axios'
-import React, { useCallback, useEffect, useMemo, useState } from 'react'
+import React, { useCallback, useEffect, useMemo, useRef, useState } from 'react'
+
 import './App.css'
 import arrow_down from './assets/icons/arrow_down.png'
 import business from './assets/icons/business.png'
@@ -37,6 +38,12 @@ function App () {
     page: 1,
     perPage: 5
   })
+
+  const fileRef = useRef<HTMLInputElement>(null)
+
+  const dataStr = useMemo<string>(() => {
+    return 'data:text/json;charset=utf-8,' + encodeURIComponent(JSON.stringify(listUser))
+  }, [])
 
   const maxPage = useMemo<number>(() => {
     return Math.floor(listUser.length / pageParam.perPage)
@@ -210,6 +217,18 @@ function App () {
     })
   }, [maxPage])
 
+  const onUploadFile = useCallback(() => {
+    fileRef.current?.click()
+  }, [])
+
+  const onGetData = useCallback((e) => {
+    const fileReader = new FileReader()
+    fileReader.readAsText(e.target.files[0], 'UTF-8')
+    fileReader.onload = e => {
+      console.log('e.target.result', e.target?.result)
+    }
+  }, [])
+
   useEffect(() => {
     axios.get(fakeAPI)
       .then((res : AxiosResponse<Array<User>>) => {
@@ -227,6 +246,7 @@ function App () {
         console.log('Error')
       })
   }, [pageParam.perPage])
+
   return (
     <div className="wrapper">
       <div className="side-bar background-primary">
@@ -285,7 +305,7 @@ function App () {
                 <div className="flex-row justify-space-between align-center">
                   <p className="font-size-48 font-weight-300">User Management</p>
                   <button className="button button-200 button-outline">
-                    <p className="color-primary font-size-14 font-weight-600">Download user list (CSV)</p>
+                    <a href={dataStr} download={'listUser.json'} className="color-primary font-size-14 font-weight-600">Download user list (CSV)</a>
                   </button>
                 </div>
                 <Spacer height={48}/>
@@ -301,7 +321,8 @@ function App () {
                       <p className="color-white font-size-14 font-weight-600">Add user</p>
                     </button>
                     <Spacer width={16}/>
-                    <button className="button button-200 button-contain flex-row align-center justify-center">
+                    <input ref={fileRef} type={'file'} id={'button-upload'} style={{ display: 'none' }} onChange={onGetData} />
+                    <button onClick={onUploadFile} className="button button-200 button-contain flex-row align-center justify-center">
                       <img alt={''} className="icon" src={upload}></img>
                       <Spacer width={8}/>
                       <p className="color-white font-size-14 font-weight-600">Upload user list (CSV)</p>
