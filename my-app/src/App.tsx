@@ -223,9 +223,10 @@ function App () {
 
   const onGetData = useCallback((e) => {
     const fileReader = new FileReader()
-    fileReader.readAsText(e.target.files[0], 'UTF-8')
+    fileReader.readAsText(e.target.files[0])
     fileReader.onload = e => {
-      console.log('e.target.result', e.target?.result)
+      const userList = JSON.parse(e.target?.result?.toString() ?? '')
+      setListUser(l => userList.concat(l))
     }
   }, [])
 
@@ -245,7 +246,7 @@ function App () {
       .catch(() => {
         console.log('Error')
       })
-  }, [pageParam.perPage])
+  }, [])
 
   return (
     <div className="wrapper">
@@ -394,8 +395,9 @@ function App () {
                     </select>
                     <Spacer width={32}/>
                     <p className="font-size-12 font-weight-400" style={{ width: 120 }}>
-                      {`1-${pageParam.perPage} of 
-                      ${pageParam.perPage * pageParam.page >= listUser.length ? listUser.length : pageParam.perPage * pageParam.page}`}
+                      {`${pageParam.perPage * (pageParam.page - 1) + 1} -
+                      ${pageParam.perPage * pageParam.page >= listUser.length ? listUser.length : pageParam.perPage * pageParam.page} of 
+                      ${listUser.length}`}
                     </p>
                     <PageButton imgSrc={faStepBackward} onClick={onClickFirstPage} disable={pageParam.page === 1} />
                     <Spacer width={16}/>

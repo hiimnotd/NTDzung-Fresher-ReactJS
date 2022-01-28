@@ -1,0 +1,54 @@
+.to-do-item {
+  display: flex;
+  flex-direction: column;
+  background-color: #fff;
+  width: 300px
+}
+
+.item-left{
+  display:flex;
+  flex-direction: row;
+  flex-wrap: wrap;
+  word-wrap: break-word;
+  align-items: center;
+  margin-bottom: 15px;
+}
+
+.check-box {
+  background-color: #fff;
+  margin-right: 10px;
+}
+
+.toggle-to-do{
+  display: flex;
+  flex-direction: row;
+  justify-content: space-evenly;
+}
+
+.toggle-btn{
+  width: 100px
+}
+
+@media only screen and (min-width: 768px){
+  .to-do-item {
+    display: flex;
+    flex-direction: row;
+    width: 500px;
+    align-items: center;
+    justify-content: space-between;
+  }
+  .item-left{
+    margin-bottom: 0px;
+  }  
+  .toggle-btn{
+    width: 60px;
+  }
+  .toggle-to-do{
+    display: flex;
+    flex-direction: row;
+    margin-left: 10px
+  }
+  .edit-btn{
+    margin-right: 6px
+  }
+} 

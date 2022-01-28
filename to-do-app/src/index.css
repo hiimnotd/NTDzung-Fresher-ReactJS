@@ -1,0 +1,61 @@
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+html, body {
+  font-family: "Open Sans";
+  height: 100%;
+}
+
+p {
+  margin: 0;
+}
+
+a {
+  text-decoration: none;
+}
+
+hr {
+  height: 1px;
+  background-color: #fff;
+  opacity: 0.12;
+}
+
+table, th, td {
+  border-bottom: 1px solid #00000012;
+  border-collapse: collapse;
+}
+
+thead {
+  background-color: rgba(0, 0, 0, 0.04);
+}
+
+th, td {
+  text-align: left;
+  padding-left: 16px;
+}
+
+th {
+  height: 56px;
+}
+
+td {
+  font-size: 14px;
+  font-weight: 400;
+  color: black;
+  height: 70px;
+}
+
+.input-text{
+  padding-left: 10px,
+}
+
+.wrapper {
+  display: flex;
+  height: 100vh;
+  flex-direction: column;
+  align-items: center;
+  background-color: #e5e5e5;
+}

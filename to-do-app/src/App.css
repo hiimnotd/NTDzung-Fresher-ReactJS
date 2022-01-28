@@ -1,0 +1,41 @@
+.title{
+  font-size: 24px;
+  font-weight: bold;
+  font-style: italic;
+  margin-top: 20px;
+  margin: 20px;
+}
+
+.input-text{
+  padding-left: 10px;
+  height: 40px;
+  margin-right: 10px;
+}
+
+.add-button{
+  height: 100%;
+}
+
+.add-field{
+  display: flex;
+  margin-bottom: 10px;
+}  
+
+@media only screen and (min-width: 768px){
+  .input-text {
+    width: 300px;
+  }
+}
+
+.add-field{
+  height: 40px;
+}
+
+.add-button{
+  background-color: #fff;
+  padding-left: 10px;
+  padding-right: 10px;
+  border-radius: 8px;
+  border: 1px solid;
+}
+
